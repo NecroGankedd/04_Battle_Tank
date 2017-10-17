@@ -3,7 +3,6 @@
 #include "TankBarrel.h"
 #include "GameFramework/Actor.h"
 
-
 void UTankBarrel::Elevate(float RelativeSpeed)
 {
 	// Move barrel the right amount this frame
