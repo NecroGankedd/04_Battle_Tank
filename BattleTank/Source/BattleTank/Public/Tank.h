@@ -29,6 +29,9 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	UFUNCTION(BlueprintCallable)
+	void Fire();
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -38,5 +41,9 @@ private:
 	ATank();
 
 	UPROPERTY(EditAnywhere, Category = Firing)
-	float LaunchSpeed = 100000; // TODO find sensible default
+	float LaunchSpeed = 4000;
+
+	UPROPERTY(EditAnywhere, Category = Setup)
+	UClass* ProjectileBluePrint; // alternative, U Docs, TSubclassOf - Using SpawnActor 2:47
+	
 };
