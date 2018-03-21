@@ -41,13 +41,18 @@ protected:
 private:
 	ATank();
 
-	UPROPERTY(EditAnywhere, Category = Firing)
-	float LaunchSpeed = 4000;
-
 	UPROPERTY(EditAnywhere, Category = Setup)
 	TSubclassOf<AProjectile> ProjectileBluePrint;
 
+	UPROPERTY(EditAnywhere, Category = Firing)
+	float LaunchSpeed = 4000;
+
+	UPROPERTY(EditAnywhere, Category = Firing)
+	float ReloadTimeSeconds = 3;
+
 	// Local Barrel reference for spawning projectile.
 	UTankBarrel* Barrel = nullptr;
+
+	double LastFireTime = 0;
 	
 };
