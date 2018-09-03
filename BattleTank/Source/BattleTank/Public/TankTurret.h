@@ -17,7 +17,7 @@ public:
 
 
 private:
-	UPROPERTY(EditDefaultsOnly, Category = Setup)
+	UPROPERTY(EditDefaultsOnly, Category = "Setup")
 	float MaxDegreesPerSecond = 25; // Sensible default?
 	float MinTurretRotation = 5; // Sensible default?
 	float MaxTurretRotation = 5; // Sensible default?
