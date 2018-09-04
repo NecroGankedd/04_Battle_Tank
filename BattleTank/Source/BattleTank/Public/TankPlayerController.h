@@ -17,7 +17,10 @@ protected:
 	void BeginPlay() override;
 
 	UFUNCTION(BlueprintCallable, Category = Setup)
-		ATank* GetControlledTank() const;
+	ATank* GetControlledTank() const;
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "Setup")
+	void FoundAimingComponent(UTankAimingComponent* AimCompRef);
 
 public:
 	virtual void Tick(float DeltaTime) override;
