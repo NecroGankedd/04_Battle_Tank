@@ -28,10 +28,8 @@ void ATankPlayerController::AimTowardsCrosshair()
 	
 	FVector OutHitLocation; // Out param
 	bool bGotHitLocation = GetSightRayHitLocation(OutHitLocation);
-	UE_LOG(LogTemp, Warning, TEXT("OutHitLocation: %i"), bGotHitLocation)
 	if (bGotHitLocation) //Side-effect, it ray traces.
 	{
-		//UE_LOG(LogTemp, Warning, TEXT("Looking at: %s in world."), *OutHitLocation.ToString())
 		AimingComponent->AimAt(OutHitLocation);
 	}
 
