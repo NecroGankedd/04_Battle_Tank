@@ -110,7 +110,7 @@ void UTankAimingComponent::MoveBarrelTowards(FVector AimDirection)
 
 void UTankAimingComponent::Fire()
 {
-	if (FiringState != EFiringState::OutOfAmmo || FiringState == EFiringState::Reloading)
+	if (FiringState == EFiringState::Ready || FiringState == EFiringState::Locating)
 	{
 		if (!ensure(Barrel)) { return; }
 		if (!ensure(ProjectileBluePrint)) { return; }
