@@ -4,6 +4,7 @@
 #include "TankTurret.h"
 #include "TankBarrel.h"
 #include "Projectile.h"
+#include "UObject/ConstructorHelpers.h"
 
 // Sets default values for this component's properties
 UTankAimingComponent::UTankAimingComponent()
@@ -11,7 +12,11 @@ UTankAimingComponent::UTankAimingComponent()
 	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
-
+	static ConstructorHelpers::FClassFinder<AProjectile> Proj(TEXT("/Game/Projectile/Projectile_BP"));
+	if (Proj.Class)
+	{
+		ProjectileBluePrint = Proj.Class;
+	}
 	// ...
 }
 
