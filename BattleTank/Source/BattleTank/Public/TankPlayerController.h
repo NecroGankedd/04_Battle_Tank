@@ -15,7 +15,7 @@ protected:
 	void BeginPlay() override;
 
 	UFUNCTION(BlueprintImplementableEvent, Category = "Setup")
-	void FoundAimingComponent(UTankAimingComponent* AimCompRef);
+	void FoundAimingComponent(UTankAimingComponent* AimCompRef); // Okay that this is not defined.
 
 public:
 	virtual void Tick(float DeltaTime) override;
@@ -30,6 +30,10 @@ private:
 
 	bool GetLookVectorHitLocation(FVector LookDirection, FVector& OutHitLocation) const;
 
+	virtual void SetPawn(APawn * InPawn) override;
+
+	UFUNCTION()
+	void OnPossessedTankDeath();
 	
 	UPROPERTY(EditDefaultsOnly)
 	float LineTraceRange = 1000000.f;
